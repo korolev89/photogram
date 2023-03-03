@@ -345,7 +345,13 @@ textarea {
 }
 
 .item__descr {
-	margin-bottom: 2px
+	margin-bottom: 2px;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .item__text {
