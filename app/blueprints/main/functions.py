@@ -2,9 +2,9 @@ import json
 from json import JSONDecodeError
 
 
-def load_data_from_json(DATA_PATH):
+def load_data_from_json(data_path):
     try:
-        with open(DATA_PATH, "r", encoding="utf-8") as file:
+        with open(data_path, "r", encoding="utf-8") as file:
             return json.load(file)
 
     except FileNotFoundError:
