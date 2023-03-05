@@ -7,3 +7,6 @@ class Post:
         self.views_count = views_count
         self.likes_count = likes_count
         self.pk = pk
+
+    def __repr__(self):
+        return repr(f'{self.pk}: {self.poster_name} - {self.views_count} - {self.likes_count}')

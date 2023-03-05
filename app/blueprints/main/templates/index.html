@@ -40,7 +40,7 @@
             <span class="item__username">Johnny</span>
           </a>
         </div>
-        <a href="/post.html" class="item__post-link">
+        <a href="/post/{{ post.pk }}" class="item__post-link">
           <img src="{{ post.pic }}" alt="" width="348" class="item__post-img">
         </a>
         <p class="item__descr" >{{ post.content }}</p>
@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="item__post-bottom">
-          <a href="/post.html" class="item__btn-more">Подробнее</a>
+          <a href="/post/{{ post.pk }}" class="item__btn-more">Подробнее</a>
           <button type="button" class="item__bookmark-btn">
             <img src="../static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
           </button>
