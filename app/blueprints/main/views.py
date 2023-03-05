@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
 from .dao.post_dao import PostDAO
+from .dao.comment_dao import CommentDAO
 from .functions import load_data_from_json
 
 POSTS_PATH = "data/posts.json"
@@ -13,6 +14,8 @@ comments_json = load_data_from_json(COMMENTS_PATH)
 post_dao = PostDAO(posts_json)
 post_dao.json_posts_to_posts()
 
+comment_dao = CommentDAO(comments_json)
+comment_dao.json_comments_to_comments()
 
 @main_blueprint.route("/")
 def main_page():
@@ -22,7 +25,8 @@ def main_page():
 @main_blueprint.route("/post/<int:pk>")
 def get_post_by_pk(pk):
     post = post_dao.get_post_by_pk(pk)
-    return render_template("post.html", post=post)
+    comments = comment_dao.get_post_comments(pk)
+    return render_template("post.html", post=post, comments=comments)
 
 # def get_posts_by_user(user_name):
 #     pass

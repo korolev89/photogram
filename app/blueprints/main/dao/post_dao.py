@@ -31,9 +31,6 @@ class PostDAO:
                 posts.append(post)
         return posts
 
-    def get_comments_by_post_id(self, post_id):
-        pass
-
     def search_for_post(self, query):
         posts = []
         for post in self.posts:
