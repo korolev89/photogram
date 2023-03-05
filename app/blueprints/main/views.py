@@ -36,11 +36,9 @@ def search_for_posts():
     posts = post_dao.search_for_post(query)
     return render_template("search.html", posts=posts, posts_count=len(posts))
 
-# def get_posts_by_user(user_name):
-#     pass
-#
-#
-# def get_comments_by_post_id(post_id):
-#     pass
-#
-#
+
+@main_blueprint.route("/user/<user_name>")
+def get_posts_by_user(user_name):
+    posts = post_dao.get_posts_by_user(user_name)
+    return render_template("user_feed.html", posts=posts)
+

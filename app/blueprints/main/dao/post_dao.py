@@ -27,7 +27,7 @@ class PostDAO:
     def get_posts_by_user(self, user_name):
         posts = []
         for post in self.posts:
-            if post.poster_name == user_name:
+            if post.poster_name.lower() == user_name.lower():
                 posts.append(post)
         return posts
 
